@@ -22,16 +22,16 @@ mcp-servers:
             "SONARQUBE_PROJECT_KEY",
             "mcp/sonarqube"]
     env:
-      SONARQUBE_URL: ${{ vars.COPILOT_MCP_SONARQUBE_URL }}
+      SONARQUBE_URL: https://sonarqube.us
       SONARQUBE_TOKEN: $GITHUB_COPILOT_OIDC_MCP_TOKEN
       SONARQUBE_ORG: ${{ vars.COPILOT_MCP_SONARQUBE_ORG }}
       SONARQUBE_PROJECT_KEY: ${{ vars.COPILOT_MCP_SONARQUBE_PROJECT_KEY }}
     tools: ["*"]
     oidc:
-      audience: ${{ vars.COPILOT_MCP_SONARQUBE_URL }}
+      audience: https://sonarqube.us
       agent-only-subject: false
       endpoints:
-        exchange: ${{ vars.COPILOT_MCP_SONARQUBE_OIDC_EXCHANGE_URL }}
+        exchange: https://api.sonarqube.us/authentication/token
       grant-type: urn:ietf:params:oauth:grant-type:jwt-bearer
       repo-only-subject: false
 ---
