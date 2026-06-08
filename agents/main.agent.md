@@ -21,7 +21,7 @@ mcp-servers:
             "-e",
             "SONARQUBE_PROJECT_KEY",
             "-v",
-            "/tmp/workspace/${GITHUB_REPOSITORY}:/app/mcp-workspace:ro",
+            "/tmp/workspace:/app/mcp-workspace:ro",
             "mcp/sonarqube"]
     env:
       SONARQUBE_URL: https://sonarcloud.io
